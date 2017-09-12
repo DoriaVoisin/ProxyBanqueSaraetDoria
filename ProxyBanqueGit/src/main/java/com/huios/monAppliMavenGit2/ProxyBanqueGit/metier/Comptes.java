@@ -5,61 +5,47 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
  * @author Utitilisateur
  *
  */
-public class Comptes 
+public abstract class Comptes 
 {
 private int numeroCompte;
-private int solde;
-private String ouvertureCompte;
+private float solde;
+private String dateOuverture;
 private Clients compteClient;
 private Cartes compteCarte;
-
-public int getNumeroCompte() 
-{
+public int getNumeroCompte() {
 	return numeroCompte;
 }
-public void setNumeroCompte(int numeroCompte) 
-{
+public void setNumeroCompte(int numeroCompte) {
 	this.numeroCompte = numeroCompte;
 }
-public int getSolde() 
-{
+public float getSolde() {
 	return solde;
 }
-public void setSolde(int solde) 
-{
+public void setSolde(float solde) {
 	this.solde = solde;
 }
-public String getOuvertureCompte() 
-{
-	return ouvertureCompte;
+public String getDateOuverture() {
+	return dateOuverture;
 }
-public void setOuvertureCompte(String ouvertureCompte)
-{
-	this.ouvertureCompte = ouvertureCompte;
+public void setDateOuverture(String dateOuverture) {
+	this.dateOuverture = dateOuverture;
 }
-
-public Clients getCompteClient() 
-{
+public Clients getCompteClient() {
 	return compteClient;
 }
-public void setCompteClient(Clients compteClient) 
-{
+public void setCompteClient(Clients compteClient) {
 	this.compteClient = compteClient;
 }
-
-
-public Cartes getCompteCarte() 
-{
+public Cartes getCompteCarte() {
 	return compteCarte;
 }
 public void setCompteCarte(Cartes compteCarte) {
 	this.compteCarte = compteCarte;
 }
-
 @Override
-public String toString() 
-{
-	return "Comptes [numeroCompte=" + numeroCompte + ", solde=" + solde + ", ouvertureCompte=" + ouvertureCompte + "]";
+public String toString() {
+	return "Comptes [numeroCompte=" + numeroCompte + ", solde=" + solde + ", dateOuverture=" + dateOuverture
+			+ ", compteClient=" + compteClient + ", compteCarte=" + compteCarte + "]";
 }
 
 
