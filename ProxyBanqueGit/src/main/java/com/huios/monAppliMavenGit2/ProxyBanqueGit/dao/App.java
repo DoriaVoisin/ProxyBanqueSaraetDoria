@@ -1,4 +1,4 @@
-package com.huios.monAppliMavenGit2.ProxyBanqueGit;
+package com.huios.monAppliMavenGit2.ProxyBanqueGit.dao;
 
 /**
  * Hello world!
