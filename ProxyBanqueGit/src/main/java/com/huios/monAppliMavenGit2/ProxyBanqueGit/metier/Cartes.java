@@ -1,4 +1,6 @@
 package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
+
+
 /**
  * La classe carte regroupe ses attributs : num�ro de cartes, date d'expiration, son titulaire, le cryptogramme le plafonddu retrait 
  * et le plafond de paiement. Une carte est associ�e � un compte
@@ -13,7 +15,7 @@ private String nomTitulaire;
 private int cryptogramme;
 private int plafondRetrait;
 private int plafondPaiement;
-private Comptes carteComptes;//ajouter type de carte en enum
+private TypedeCarte type;
 
 public int getNumeroCarte() 
 {
@@ -63,24 +65,17 @@ public void setPlafondPaiement(int plafondPaiement)
 {
 	this.plafondPaiement = plafondPaiement;
 }
-
-public Comptes getCarteComptes() 
-{
-	return carteComptes;
-}
-public void setCarteComptes(Comptes carteComptes)
-{
-	this.carteComptes = carteComptes;
-}
-
 @Override
-public String toString()
-{
-	return "Cartes [numeroCarte=" + numCarte + ", dateExpiration=" + dateExpiration + ", nomTitulaire="
-			+ nomTitulaire + ", cryptogramme=" + cryptogramme + ", plafondRetrait=" + plafondRetrait
-			+ ", plafondPaiement=" + plafondPaiement + "]";
+public String toString() {
+	return "Cartes [numCarte=" + numCarte + ", dateExpiration=" + dateExpiration + ", nomTitulaire=" + nomTitulaire
+			+ ", cryptogramme=" + cryptogramme + ", plafondRetrait=" + plafondRetrait + ", plafondPaiement="
+			+ plafondPaiement + ", type=" + type + "]";
 }
 
 
 
 }
+
+
+
+
