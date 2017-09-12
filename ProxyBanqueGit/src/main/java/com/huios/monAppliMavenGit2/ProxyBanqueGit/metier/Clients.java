@@ -10,12 +10,12 @@ import java.util.List;
  */
 
 
-public class Clients 
+public abstract class Clients 
 {
 private String nom;
 private String prenom;
 private String adresse;
-private String codePostale;
+private int codePostale;
 private String ville;
 private String email;
 private int tel;
@@ -47,11 +47,11 @@ public void setAdresse(String adresse)
 {
 	this.adresse = adresse;
 }
-public String getCodePostale()
+public int getCodePostale()
 {
 	return codePostale;
 }
-public void setCodePostale(String codePostale) 
+public void setCodePostale(int codePostale) 
 {
 	this.codePostale = codePostale;
 }

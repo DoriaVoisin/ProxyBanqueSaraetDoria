@@ -1,18 +1,28 @@
 package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
+
+import java.sql.Date;
+
 /**
  * La classe compte regroupe le num�ro du compte, son solde, la date de l'ouverture du compte. 
  * Un compte est associ� � une carte, un compte est associ� � un client
  * @author Utitilisateur
  *
  */
-public class Comptes 
+public  class Comptes 
 {
 private int numeroCompte;
 private int solde;
-private String ouvertureCompte;
+private Date ouvertureCompte;
 private Clients compteClient;
 private Cartes compteCarte;
 
+
+public Date getOuvertureCompte() {
+	return ouvertureCompte;
+}
+public void setOuvertureCompte(Date ouvertureCompte) {
+	this.ouvertureCompte = ouvertureCompte;
+}
 public int getNumeroCompte() 
 {
 	return numeroCompte;
@@ -28,14 +38,6 @@ public int getSolde()
 public void setSolde(int solde) 
 {
 	this.solde = solde;
-}
-public String getOuvertureCompte() 
-{
-	return ouvertureCompte;
-}
-public void setOuvertureCompte(String ouvertureCompte)
-{
-	this.ouvertureCompte = ouvertureCompte;
 }
 
 public Clients getCompteClient() 
@@ -60,6 +62,10 @@ public void setCompteCarte(Cartes compteCarte) {
 public String toString() 
 {
 	return "Comptes [numeroCompte=" + numeroCompte + ", solde=" + solde + ", ouvertureCompte=" + ouvertureCompte + "]";
+}
+public float getDecouvert() {
+	// TODO Auto-generated method stub
+	return 0;
 }
 
 

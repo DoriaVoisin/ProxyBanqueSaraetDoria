@@ -6,7 +6,7 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
  * @author Utitilisateur
  *
  */
-public class Employe 
+public abstract class Employe 
 {
 private int id;
 private String nom;
