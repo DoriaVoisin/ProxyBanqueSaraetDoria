@@ -34,7 +34,7 @@ public class DAO implements Idao
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//2. Adresse de la BDD
-			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login = "root";
 			String mdp = "";
 			
@@ -45,7 +45,7 @@ public class DAO implements Idao
 			String requete = " INSERT INTO compte (dateOuverture, solde, decouvert) VALUES (?,?,?)";
 			PreparedStatement ps = con.prepareStatement(requete);
 			ps.setFloat(1, cc.getSolde());//chaine de caractères en position 1. 
-			ps.setString(2, cc.getDateOuverture());
+			ps.setDate(2, cc.getOuvertureCompte());
 			ps.setFloat(3,cc.getDecouvert());
 			//envoyer la requete, il y en a 2 : une qui renvoie un résultat 'executeQuery', une qui n'en renvoie pas 'executeUpdate'
 			ps.executeUpdate();
@@ -71,7 +71,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			
@@ -105,7 +105,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			
@@ -137,7 +137,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			//3- connecter à la base 
@@ -173,7 +173,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			
@@ -208,7 +208,7 @@ public class DAO implements Idao
 				//1- charger le pilote
 				Class.forName("com.mysql.jdbc.Driver");
 				//2- adresse de la base de données
-				String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+				String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 				String login="root";
 				String mdp="";
 				
@@ -240,7 +240,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			//3- connecter à la base 
@@ -276,7 +276,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			
@@ -309,7 +309,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			
@@ -341,7 +341,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			//3- connecter à la base 
@@ -375,7 +375,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			
@@ -410,7 +410,7 @@ public class DAO implements Idao
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//2. Adresse de la BDD
-			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login = "root";
 			String mdp = "";
 			
@@ -445,7 +445,7 @@ public class DAO implements Idao
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//2. Adresse de la BDD
-			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login = "root";
 			String mdp = "";
 			
@@ -456,7 +456,7 @@ public class DAO implements Idao
 			String requete = " INSERT INTO compte (dateOuverture, solde, tauxRemuneration) VALUES (?,?,?)";
 			PreparedStatement ps = con.prepareStatement(requete);
 			ps.setFloat(1, ce.getSolde());//chaine de caractères en position 1. 
-			ps.setString(2, ce.getDateOuverture());
+			ps.setDate(2, ce.getOuvertureCompte());
 			ps.setFloat(3,ce.getTauxRemuneration());
 			//envoyer la requete, il y en a 2 : une qui renvoie un résultat 'executeQuery', une qui n'en renvoie pas 'executeUpdate'
 			ps.executeUpdate();
@@ -479,7 +479,7 @@ public class DAO implements Idao
 			//1- charger le pilote
 			Class.forName("com.mysql.jdbc.Driver");
 			//2- adresse de la base de données
-			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login="root";
 			String mdp="";
 			
@@ -513,7 +513,7 @@ public class DAO implements Idao
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//2. Adresse de la BDD
-			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login = "root";
 			String mdp = "";
 			
@@ -550,7 +550,7 @@ public class DAO implements Idao
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//2. Adresse de la BDD
-			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String adresse = "jdbc:mysql://localhost:3306/proxybanquesaraetdoriaetmelissa";
 			String login = "root";
 			String mdp = "";
 			
@@ -574,12 +574,12 @@ public class DAO implements Idao
 				CompteCourant cc = new CompteCourant(); 
 				//je transforme les colonnes en attributs d'objets
 				cc.setNumeroCompte(rs.getInt("idComptes"));
-				cc.setDateOuverture("dateOuverture");
+				cc.setOuvertureCompte(rs.getDate("dateOuverture"));
 				cc.setSolde(rs.getFloat("solde"));
 				cc.setDecouvert(rs.getInt("decouvert"));
 				
 				ce.setNumeroCompte(rs.getInt("idComptes"));
-				ce.setDateOuverture("dateOuverture");
+				ce.setOuvertureCompte(rs.getDate("dateOuverture"));
 				ce.setSolde(rs.getFloat("solde"));
 				ce.setTauxRemuneration(rs.getFloat("tauxRemuneration"));
 				

@@ -26,15 +26,18 @@ public interface Idao
 	public void createCompteEpargne(CompteEpargne ce);
 	public void UpdateCompteEpargne(int idCompte, float tauxRemuneration); 
 	public void DeleteCompteEpargne(int idCompte);
-
+	
+	//CRUD Gerant
 	public void suppressionGerant (int id);
 	public void miseAjourGerant (int id, String motdepasse);
 	public void createGerant (Gerant g);
 	
+	// CRUD Conseiller
 	public void suppressionConseillerClient (int id);
 	public void miseAjourConseillerClient (int id, String prenom);
 	public void createConseillerClient (ConseillerClient cl);
 	
+	// CRUD Auditeur
 	public void suppressionAuditeur (int id);
 	public void miseAjourAuditeur  (int id, String nom);
 	public void createAuditeur  (Auditeur  a);
