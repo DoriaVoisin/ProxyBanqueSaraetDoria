@@ -265,6 +265,14 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			panelConsC.add(labelConsCLogin); panelConsC.add(textConsCLogin);
 			panelConsC.add(labelConsCMDP); panelConsC.add(textConsCMDP);
 			panelConsC.add(labelConsCVide); panelConsC.add(boutonConsC);
+			//Affichage maj Conseiller
+			panelConsU.setLayout(grilleConsD);
+			panelConsU.add(labelConsUId); panelConsU.add(textConsUId);
+			panelConsU.add(labelConsUPrenom); panelConsU.add(textConsUPrenom);
+			panelConsU.add(labelConsUVide); panelConsU.add(labelConsUVide2);
+			panelConsU.add(labelConsUVide3); panelConsU.add(labelConsUVide4);
+			panelConsU.add(labelConsUVide5); panelConsU.add(labelConsUVide6);
+			panelConsU.add(labelConsUVide7); panelConsU.add(boutonConsU);
 			//Affichage Delete Conseiller
 			panelConsD.setLayout(grilleConsD);
 			panelConsD.add(labelConsDId); panelConsD.add(textConsDId);
@@ -286,7 +294,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			onglets.addTab("Effacer compte épargne", panelCED);
 			onglets.addTab("Créer un conseiller   ", panelConsC);
 //			onglets.addTab("Lire un conseiller    ", panelConsR);
-//			onglets.addTab("MAJ conseiller        ", panelConsU);
+			onglets.addTab("MAJ conseiller        ", panelConsU);
 			onglets.addTab("Effacer conseiller    ", panelConsD);
 			getContentPane().add(onglets);
 			pack();
@@ -351,7 +359,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 				}
 			});
 			
-			// Action Valider Effacement Compte Courant
+			// Action Valider Effacement Conseiller
 			boutonConsD.addActionListener(new ActionListener() {
 					
 					@Override
@@ -359,6 +367,17 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					int id = Integer.parseInt(textConsDId.getText());
 					sc.suppressionConseillerClient(id);
 					textConsDId.setText("");
+					}
+				});
+			// Action Valider MAJ Conseiller
+				boutonConsU.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						int id = Integer.parseInt(textConsUId.getText());
+						int prenom = Integer.parseInt(textConsUPrenom.getText());
+						sc.UpdateCompteCourant(id, prenom);
+						textConsUId.setText("");
+						textConsUPrenom.setText("");
 					}
 				});
 		}
