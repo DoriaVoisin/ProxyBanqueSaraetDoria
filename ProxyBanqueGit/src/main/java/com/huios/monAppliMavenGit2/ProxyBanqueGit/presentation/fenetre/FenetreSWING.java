@@ -311,11 +311,11 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					}
 				});
 			
-		}
-		public static void main(String[]args) {
-			FenetreSWING f =new FenetreSWING();
-			f.setVisible(true);
-		}
+//		}
+//		public static void main(String[]args) {
+//			FenetreSWING f =new FenetreSWING();
+//			f.setVisible(true);
+//		}
 				
 		
 		
@@ -368,7 +368,6 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 //					text.setText("");
 //					label2.setText(combo.getSelectedItem().toString());
 //				}
-//			});
-			
-
-}
+//			});	
+		}
+	}
