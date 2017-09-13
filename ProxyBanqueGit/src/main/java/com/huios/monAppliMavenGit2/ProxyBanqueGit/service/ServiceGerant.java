@@ -94,6 +94,18 @@ public class ServiceGerant implements IGerant
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void mettreAjourGerant(int id, String prenom) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void supprimerGerant(int id) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 			
 }

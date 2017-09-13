@@ -25,4 +25,14 @@ public class ServiceAuditeur implements IAuditeur {
 		return null;
 	}
 
-}
+	@Override
+	public void miseAjourAuditeur(int id, String nom) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void supprimerAuditeur(int id) {
+		// TODO Auto-generated method stub
+		
+	}}

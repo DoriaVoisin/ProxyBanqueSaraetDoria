@@ -21,20 +21,41 @@ public class Lanceur {
 		ConseillerClient cl1 = new ConseillerClient ("Melissa","Perrot");
 		ConseillerClient cl2 = new ConseillerClient ("Sara","Vallerotto");	
 		
-		ic.createConseillerClient(cl1);
-		ic.createConseillerClient(cl2);
 		
 		Gerant g1 = new Gerant ("Mario","Rossi");
 		Gerant g2 = new Gerant ("Giulia","Girardi");
 		
-		ig.createGerant(g1);
-		ig.createGerant(g2);
-
 		Auditeur a1 = new Auditeur ("Doria","Voisin");
 		Auditeur a2 = new Auditeur ("Martina","Rinaudo");
 		
+		
+		ig.createGerant(g1);
+		ig.createGerant(g2);
+		
 		ia.createAuditeur(a1);
 		ia.createAuditeur(a2);
+		
+		ic.createConseillerClient(cl1);
+		ic.createConseillerClient(cl2);
+		
+		ig.supprimerGerant(1);
+		ig.supprimerGerant(2);	
+		
+		ia.supprimerAuditeur(1);
+		ia.supprimerAuditeur(2);
+		
+		ic.suppressionConseillerClient(4);
+		ic.suppressionConseillerClient(5);	
+		
+		ig.mettreAjourGerant(2, "micio");
+		ig.mettreAjourGerant(1, "cane");
+		
+		ia.miseAjourAuditeur(2, "micio");
+		ia.miseAjourAuditeur(1, "cane");				
+			
+		ic.miseAjourConseillerClient(4, "ciao");
+		ic.miseAjourConseillerClient(5, "noioso");
+		
 		
 		{
 		
