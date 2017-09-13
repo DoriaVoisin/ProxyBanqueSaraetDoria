@@ -14,7 +14,6 @@ public abstract class Comptes
 {
 private int numeroCompte;
 private float solde;
-private String dateOuverture;
 private Date ouvertureCompte;
 private Clients compteClient;
 private Cartes compteCarte;
@@ -29,12 +28,6 @@ public float getSolde() {
 }
 public void setSolde(float solde) {
 	this.solde = solde;
-}
-public String getDateOuverture() {
-	return dateOuverture;
-}
-public void setDateOuverture(String dateOuverture) {
-	this.dateOuverture = dateOuverture;
 }
 public Date getOuvertureCompte() {
 	return ouvertureCompte;
@@ -54,6 +47,7 @@ public Cartes getCompteCarte() {
 public void setCompteCarte(Cartes compteCarte) {
 	this.compteCarte = compteCarte;
 }
+
 
 
 

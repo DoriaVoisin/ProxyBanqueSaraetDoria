@@ -7,12 +7,14 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.dao.Idao;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteEpargne;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Comptes;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.ConseillerClient;
 
 
 public class ServiceGerant 
 {
 	private Idao dao = new DAO();
 	//CRUD Compte Courant
+	
 			public void createCompteCourant(CompteCourant cc)
 			{
 			 dao.createCompteCourant(cc);
@@ -45,5 +47,20 @@ public class ServiceGerant
 			public List<Comptes> FindAllComptes(String rechercher)
 			{
 				return dao.FindAllComptes(rechercher) ;	
+			}
+			
+			//Creer, effacer et mettre à jour un conseiller
+			
+			public void createConseillerClient(ConseillerClient cl)
+			{
+			dao.createConseillerClient(cl);
+			}
+			public void miseAjourConseillerClient(int id, String prenom)
+			{
+			dao.miseAjourConseillerClient( id, prenom);
+			}
+			public void suppressionConseillerClient(int id)
+			{
+			dao.suppressionConseillerClient( id);
 			}
 }
