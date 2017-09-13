@@ -159,6 +159,13 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 		private JLabel labelConsUVide5 = new JLabel("");                private JLabel labelConsUVide6 = new JLabel(""); 
 		private JLabel labelConsUVide7 = new JLabel("");                private JButton boutonConsU = new JButton("Valider");
 		
+		private JLabel labelConsDId = new JLabel("Id");                 private JTextField textConsDId=new JTextField(10);
+		private JLabel labelConsDVide = new JLabel("");                 private JLabel labelConsDVide2 = new JLabel(""); 
+		private JLabel labelConsDVide3 = new JLabel("");                private JLabel labelConsDVide4 = new JLabel(""); 
+		private JLabel labelConsDVide5 = new JLabel("");                private JLabel labelConsDVide6 = new JLabel(""); 
+		private JLabel labelConsDVide7 = new JLabel("");                private JLabel labelConsDVide8 = new JLabel(""); 
+		private JLabel labelConsDVide9 = new JLabel("");                private JButton boutonConsD = new JButton("Valider");
+		
 		private IConseiller sc = new ServiceConseiller();
 		
 		public FenetreSWING(){
@@ -258,6 +265,14 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			panelConsC.add(labelConsCLogin); panelConsC.add(textConsCLogin);
 			panelConsC.add(labelConsCMDP); panelConsC.add(textConsCMDP);
 			panelConsC.add(labelConsCVide); panelConsC.add(boutonConsC);
+			//Affichage Delete Conseiller
+			panelConsD.setLayout(grilleConsD);
+			panelConsD.add(labelConsDId); panelConsD.add(textConsDId);
+			panelConsD.add(labelConsDVide); panelConsD.add(labelConsDVide2);
+			panelConsD.add(labelConsDVide3); panelConsD.add(labelConsDVide4);
+			panelConsD.add(labelConsDVide5); panelConsD.add(labelConsDVide6);
+			panelConsD.add(labelConsDVide7); panelConsD.add(labelConsDVide8);
+			panelConsD.add(labelConsDVide9); panelConsD.add(boutonConsD);
 	
 			// Onglets
 			JTabbedPane onglets = new JTabbedPane();
@@ -270,6 +285,9 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			onglets.addTab("Maj compte épargne    ", panelCEU);
 			onglets.addTab("Effacer compte épargne", panelCED);
 			onglets.addTab("Créer un conseiller   ", panelConsC);
+//			onglets.addTab("Lire un conseiller    ", panelConsR);
+//			onglets.addTab("MAJ conseiller        ", panelConsU);
+			onglets.addTab("Effacer conseiller    ", panelConsD);
 			getContentPane().add(onglets);
 			pack();
 			
@@ -311,7 +329,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					public void actionPerformed(ActionEvent e) {
 					int id = Integer.parseInt(textCCDId.getText());
 					sc.DeleteCompteCourant(id);
-					textCCDId.setText("");	
+					textCCDId.setText("");
 					}
 				});
 			// Action Valider Creation Conseiller
@@ -332,11 +350,22 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					textConsCLogin.setText("");
 				}
 			});
+			
+			// Action Valider Effacement Compte Courant
+			boutonConsD.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+					int id = Integer.parseInt(textConsDId.getText());
+					sc.suppressionConseillerClient(id);
+					textConsDId.setText("");
+					}
+				});
 		}
-//		public static void main(String[]args) {
-//			FenetreSWING f =new FenetreSWING();
-//			f.setVisible(true);
-//		}
+		public static void main(String[]args) {
+			FenetreSWING f =new FenetreSWING();
+			f.setVisible(true);
+		}
 				
 		
 		
