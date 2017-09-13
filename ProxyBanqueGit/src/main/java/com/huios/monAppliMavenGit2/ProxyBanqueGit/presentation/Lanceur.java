@@ -20,20 +20,29 @@ public class Lanceur {
 		IGerant ig = new ServiceGerant();
 		IAuditeur ia = new ServiceAuditeur();	
 	
-		
 		FenetreSWING f =new FenetreSWING();
 		f.setVisible(true);
-		
 		
 		ConseillerClient cl1 = new ConseillerClient ("Melissa","Perrot","wtf","mel","mel@dibiza.com");
 		ConseillerClient cl2 = new ConseillerClient ("Sara","Vallerotto","slg","sara","sara@ibis.com");	
 
+<<<<<<< HEAD
 		
 		ic.createConseillerClient(cl1);
 		ic.createConseillerClient(cl2);
 		
 
 		
+=======
+//		ic.createConseillerClient(cl1);
+//		ic.createConseillerClient(cl2);
+		
+		CompteCourant cc = new CompteCourant(1200, 200, "09.02.2017" );
+		ic.createConseillerClient(cl1);
+		ic.createConseillerClient(cl2);
+		ic.createCompteCourant(cc);
+
+>>>>>>> 8894e9149571d05192034985d4e51d2b9f9dfd3d
 		Gerant g1 = new Gerant ("Mario","Rossi");
 		Gerant g2 = new Gerant ("Giulia","Girardi");
 		
