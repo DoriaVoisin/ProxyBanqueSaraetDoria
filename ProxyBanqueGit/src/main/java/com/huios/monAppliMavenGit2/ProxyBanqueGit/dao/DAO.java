@@ -213,13 +213,13 @@ public class DAO implements Idao
 			Connection conn = DriverManager.getConnection(adresse, login, mdp);
 			//4- préparer en envoyer la requete 
 			
-			String requete ="INSERT INTO employer (nom,prenom,login, motdepasse) VALUES (?,?,?,?)";
+			String requete ="INSERT INTO employe (nom,prenom,login, motdepasse, email) VALUES (?,?,?,?,?)";
 			PreparedStatement ps= conn.prepareStatement(requete);
 			ps.setString(1,cl.getNom());
 			ps.setString(2,cl.getPrenom());
 			ps.setString(3, cl.getLogin());
 			ps.setString(4, cl.getMotdepasse());
-						
+			ps.setString(5, cl.getEmail());	
 			ps.executeUpdate();
 			
 			ps.close();
@@ -356,7 +356,7 @@ public class DAO implements Idao
 			String requete = " INSERT INTO compte (dateOuverture, solde, decouvert) VALUES (?,?,?)";
 			PreparedStatement ps = con.prepareStatement(requete);
 			ps.setFloat(1, cc.getSolde());//chaine de caractères en position 1. 
-			ps.setDate(2, cc.getOuvertureCompte());
+			ps.setString(2, cc.getOuvertureCompte());
 			ps.setFloat(3,cc.getDecouvert());
 			//envoyer la requete, il y en a 2 : une qui renvoie un résultat 'executeQuery', une qui n'en renvoie pas 'executeUpdate'
 			ps.executeUpdate();
@@ -463,7 +463,7 @@ public class DAO implements Idao
 			String requete = " INSERT INTO compte (dateOuverture, solde, tauxRemuneration) VALUES (?,?,?)";
 			PreparedStatement ps = con.prepareStatement(requete);
 			ps.setFloat(1, ce.getSolde());//chaine de caractères en position 1. 
-			ps.setDate(2, ce.getOuvertureCompte());
+			ps.setString(2, ce.getOuvertureCompte());
 			ps.setFloat(3,ce.getTauxRemuneration());
 			//envoyer la requete, il y en a 2 : une qui renvoie un résultat 'executeQuery', une qui n'en renvoie pas 'executeUpdate'
 			ps.executeUpdate();
@@ -581,12 +581,12 @@ public class DAO implements Idao
 				CompteCourant cc = new CompteCourant(); 
 				//je transforme les colonnes en attributs d'objets
 				cc.setNumeroCompte(rs.getInt("idComptes"));
-				cc.setOuvertureCompte(rs.getDate("dateOuverture"));
+				cc.setOuvertureCompte("dateOuverture");
 				cc.setSolde(rs.getFloat("solde"));
 				cc.setDecouvert(rs.getInt("decouvert"));
 				
 				ce.setNumeroCompte(rs.getInt("idComptes"));
-				ce.setOuvertureCompte(rs.getDate("dateOuverture"));
+				ce.setOuvertureCompte("dateOuverture");
 				ce.setSolde(rs.getFloat("solde"));
 				ce.setTauxRemuneration(rs.getFloat("tauxRemuneration"));
 				

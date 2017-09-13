@@ -18,6 +18,15 @@ private Agence monAgence;
 
 
 
+
+public Employe(String nom, String prenom, String email, String login, String motdepasse) {
+	super();
+	this.nom = nom;
+	this.prenom = prenom;
+	this.email = email;
+	this.login = login;
+	this.motdepasse = motdepasse;
+}
 public Employe() {
 	super();
 }

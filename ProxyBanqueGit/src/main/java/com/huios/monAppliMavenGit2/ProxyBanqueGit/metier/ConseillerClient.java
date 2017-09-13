@@ -22,6 +22,14 @@ public class ConseillerClient extends Employe
 	
 
 	
+	
+
+
+	public ConseillerClient(String nom, String prenom, String email, String login, String motdepasse) {
+		super(nom, prenom, email, login, motdepasse);
+		// TODO Auto-generated constructor stub
+	}
+
 	public ConseillerClient() {
 		super();
 	}
