@@ -12,6 +12,7 @@ import java.util.List;
 
 public abstract class Clients 
 {
+private int idClient;
 private String nom;
 private String prenom;
 private String adresse;
@@ -23,6 +24,12 @@ private List<Comptes> comptes = new ArrayList<Comptes> () ;
 private ConseillerClient nomConseiller;
 
 
+public int getIdClient() {
+	return idClient;
+}
+public void setIdClient(int idClient) {
+	this.idClient = idClient;
+}
 public String getNom() 
 {
 	return nom;
@@ -99,10 +106,10 @@ public void setNomConseiller(ConseillerClient nomConseiller)
 
 
 @Override
-public String toString() 
-{
-	return "Clients [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", codePostale=" + codePostale
-			+ ", ville=" + ville + ", email=" + email + ", tel=" + tel + "]";
+public String toString() {
+	return "Clients [idClient=" + idClient + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse
+			+ ", codePostale=" + codePostale + ", ville=" + ville + ", email=" + email + ", tel=" + tel
+			+ ", nomConseiller=" + nomConseiller + "]";
 }
 public List<Comptes> ajouterComptes (Comptes c)
 {

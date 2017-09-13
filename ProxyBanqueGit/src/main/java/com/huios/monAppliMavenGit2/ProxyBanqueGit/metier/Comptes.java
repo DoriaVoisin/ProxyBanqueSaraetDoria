@@ -8,65 +8,57 @@ import java.sql.Date;
  * @author Utitilisateur
  *
  */
-public  class Comptes 
+
+public abstract class Comptes 
+
 {
 private int numeroCompte;
-private int solde;
+private float solde;
+private String dateOuverture;
 private Date ouvertureCompte;
 private Clients compteClient;
 private Cartes compteCarte;
-
-
+public int getNumeroCompte() {
+	return numeroCompte;
+}
+public void setNumeroCompte(int numeroCompte) {
+	this.numeroCompte = numeroCompte;
+}
+public float getSolde() {
+	return solde;
+}
+public void setSolde(float solde) {
+	this.solde = solde;
+}
+public String getDateOuverture() {
+	return dateOuverture;
+}
+public void setDateOuverture(String dateOuverture) {
+	this.dateOuverture = dateOuverture;
+}
 public Date getOuvertureCompte() {
 	return ouvertureCompte;
 }
 public void setOuvertureCompte(Date ouvertureCompte) {
 	this.ouvertureCompte = ouvertureCompte;
 }
-public int getNumeroCompte() 
-{
-	return numeroCompte;
-}
-public void setNumeroCompte(int numeroCompte) 
-{
-	this.numeroCompte = numeroCompte;
-}
-public int getSolde() 
-{
-	return solde;
-}
-public void setSolde(int solde) 
-{
-	this.solde = solde;
-}
-
-public Clients getCompteClient() 
-{
+public Clients getCompteClient() {
 	return compteClient;
 }
-public void setCompteClient(Clients compteClient) 
-{
+public void setCompteClient(Clients compteClient) {
 	this.compteClient = compteClient;
 }
-
-
-public Cartes getCompteCarte() 
-{
+public Cartes getCompteCarte() {
 	return compteCarte;
 }
 public void setCompteCarte(Cartes compteCarte) {
 	this.compteCarte = compteCarte;
 }
 
-@Override
-public String toString() 
-{
-	return "Comptes [numeroCompte=" + numeroCompte + ", solde=" + solde + ", ouvertureCompte=" + ouvertureCompte + "]";
-}
-public float getDecouvert() {
-	// TODO Auto-generated method stub
-	return 0;
-}
+
+
+
+
 
 
 
