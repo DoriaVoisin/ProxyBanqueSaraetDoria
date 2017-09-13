@@ -17,6 +17,7 @@ private float solde;
 private Date ouvertureCompte;
 private Clients compteClient;
 private Cartes compteCarte;
+
 public int getNumeroCompte() {
 	return numeroCompte;
 }
@@ -47,7 +48,6 @@ public Cartes getCompteCarte() {
 public void setCompteCarte(Cartes compteCarte) {
 	this.compteCarte = compteCarte;
 }
-
 
 
 
