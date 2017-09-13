@@ -310,7 +310,6 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					textCCDId.setText("");	
 					}
 				});
-			
 //		}
 //		public static void main(String[]args) {
 //			FenetreSWING f =new FenetreSWING();
