@@ -21,7 +21,9 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Clients;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Particulier;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.IConseiller;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 
@@ -272,7 +274,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					CompteCourant cc = new CompteCourant();
-					cc.setCompteClient(compteClient(Integer.parseInt(textCCCId.getText())));
+					cc.setCompteClient(new Particulier(Integer.parseInt(textCCCId.getText())));
 					cc.setNumeroCompte(Integer.parseInt(textCCCNum.getText()));
 					cc.setSolde(Integer.parseInt(textCCCSolde.getText()));
 					cc.setDecouvert(Integer.parseInt(textCCCDecouvert.getText()));

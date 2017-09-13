@@ -6,6 +6,13 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
  */
 public class Entreprises extends Clients 
 {
+public Entreprises(int idClient) {
+		super(idClient);
+	}
+public Entreprises() {
+	super();
+}
+
 private int matricule; //strig mon entreprise
 
 public int getMatricule() 

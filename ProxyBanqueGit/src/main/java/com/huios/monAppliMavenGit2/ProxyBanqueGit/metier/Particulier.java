@@ -2,8 +2,17 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
 
 public class Particulier extends Clients{
 	
+	public Particulier(int idClient) {
+		super(idClient);
+	}
+	public Particulier() {
+		super();
+	}
+	
 	private String nomClient;
 	private String prenomClient;
+
+	
 	
 	public String getNomClient() {
 		return nomClient;

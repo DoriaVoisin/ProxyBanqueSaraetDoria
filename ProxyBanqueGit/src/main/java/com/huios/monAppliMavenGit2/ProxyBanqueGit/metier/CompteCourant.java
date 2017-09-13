@@ -6,6 +6,8 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
  */
 public class CompteCourant extends Comptes
 {
+	
+	
 private float decouvert;
 
 public float getDecouvert()

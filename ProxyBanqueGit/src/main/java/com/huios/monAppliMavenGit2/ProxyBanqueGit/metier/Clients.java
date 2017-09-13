@@ -9,7 +9,6 @@ import java.util.List;
  *
  */
 
-
 public abstract class Clients 
 {
 private int idClient;
@@ -22,7 +21,6 @@ private String email;
 private int tel;
 private List<Comptes> comptes = new ArrayList<Comptes> () ;
 private ConseillerClient nomConseiller;
-
 
 public int getIdClient() {
 	return idClient;
@@ -98,6 +96,18 @@ public ConseillerClient getNomConseiller()
 {
 	return nomConseiller;
 }
+/**
+ * @param idClient
+ */
+public Clients(int idClient) {
+	super();
+	this.idClient = idClient;
+}
+
+public Clients() {
+	super();
+}
+
 public void setNomConseiller(ConseillerClient nomConseiller) 
 {
 	this.nomConseiller = nomConseiller;
