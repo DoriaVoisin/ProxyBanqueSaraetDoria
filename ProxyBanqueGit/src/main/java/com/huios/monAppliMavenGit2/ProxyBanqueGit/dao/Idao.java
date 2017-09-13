@@ -7,11 +7,15 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteEpargne;
 
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Auditeur;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CarteVisaElectron;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CarteVisaPremier;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Cartes;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Clients;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Comptes;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.ConseillerClient;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Employe;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Gerant;
+
 
 
 public interface Idao 
@@ -26,6 +30,9 @@ public interface Idao
 	public void createCompteEpargne(CompteEpargne ce);
 	public void UpdateCompteEpargne(int idCompte, float tauxRemuneration); 
 	public void DeleteCompteEpargne(int idCompte);
+	
+	//Les Comptes
+	public List<Comptes> FindAllComptes(String rechercher); 
 	
 	//CRUD Gerant
 	public void suppressionGerant (int id);
@@ -42,11 +49,19 @@ public interface Idao
 	public void miseAjourAuditeur  (int id, String nom);
 	public void createAuditeur  (Auditeur  a);
 	
+	// CRUD CartesvisaElectron
+	public void createCarteVisaElectron(CarteVisaElectron cve);
+	public void UpdateCarteVisaElectron(int idCarte, String nomtitulaire); 
+	public void DeleteCarteVisaElectron(int idCarte);
 	
+	// CRUD CartesvisaPremier
+	public void createCarteVisaPremier(CarteVisaPremier cvp);
+	public void UpdateCarteVisaPremier(int idCarte, String nomtitulaire); 
+	public void DeleteCarteVisaPremier(int idCarte);
 	
-	
+	//Les Cartes
+	public List<Cartes> FindAllCartes(String rechercher); 
 
 		
-	//Les Comptes
-	public List<Comptes> FindAllComptes(String rechercher); 
+	
 }
