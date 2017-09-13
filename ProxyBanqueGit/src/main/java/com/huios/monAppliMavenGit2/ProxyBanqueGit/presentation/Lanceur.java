@@ -22,6 +22,7 @@ public class Lanceur {
 		FenetreSWING f =new FenetreSWING();
 		f.setVisible(true);
 		
+		
 		ConseillerClient cl1 = new ConseillerClient ("Melissa","Perrot","wtf","mel","mel@dibiza.com");
 		ConseillerClient cl2 = new ConseillerClient ("Sara","Vallerotto","slg","sara","sara@ibis.com");	
 		
