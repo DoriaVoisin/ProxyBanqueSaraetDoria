@@ -50,12 +50,11 @@ public class Lanceur {
 		ig.mettreAjourGerant(2, "micio");
 		ig.mettreAjourGerant(1, "cane");
 		
-		ia.miseAjourAuditeur(2, "micio");
-		ia.miseAjourAuditeur(1, "cane");				
+		ia.miseAjourAuditeur(2, "xena");
+		ia.miseAjourAuditeur(1, "hercules");				
 			
-		ic.miseAjourConseillerClient(4, "ciao");
-		ic.miseAjourConseillerClient(5, "noioso");
-		
+		ic.miseAjourConseillerClient(4, "red");
+		ic.miseAjourConseillerClient(5, "toby");		
 		
 		{
 		
