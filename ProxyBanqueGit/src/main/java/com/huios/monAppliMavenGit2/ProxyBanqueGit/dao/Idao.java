@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteEpargne;
-
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Auditeur;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Clients;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Comptes;
@@ -30,20 +29,25 @@ public interface Idao
 	public void suppressionGerant (int id);
 	public void miseAjourGerant (int id, String motdepasse);
 	public void createGerant (Gerant g);
+	public List<Gerant> FindAllGerant();
 	
 	public void suppressionConseillerClient (int id);
 	public void miseAjourConseillerClient (int id, String prenom);
 	public void createConseillerClient (ConseillerClient cl);
+	public List<ConseillerClient> FindAllConseillers(); 
 	
 	public void suppressionAuditeur (int id);
 	public void miseAjourAuditeur  (int id, String nom);
 	public void createAuditeur  (Auditeur  a);
+	public List<Auditeur> FindAllAuditeur();
 	
-	
-	
-	
+	public ConseillerClient getConseillerClient(int id);
+	public Gerant getGerant(int id);
+	public Auditeur getAuditeur(int id);	
 
 		
 	//Les Comptes
-	public List<Comptes> FindAllComptes(String rechercher); 
+	public List<Comptes> FindAllComptes(String rechercher);
+	
+	
 }

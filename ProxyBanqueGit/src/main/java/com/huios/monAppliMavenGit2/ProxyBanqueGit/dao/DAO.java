@@ -12,6 +12,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteEpargne;
 import java.sql.SQLException;
 
+
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Auditeur;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Clients;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Comptes;
@@ -383,7 +384,7 @@ public class DAO implements Idao
 			Connection conn = DriverManager.getConnection(adresse, login, mdp);
 			//4- préparer en envoyer la requete 
 			
-			String requete="UPDATE personne set idCompte=? "+
+			String requete="UPDATE compte set idCompte=? "+
 			"where Id=?";//requete SQL
 					
 			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
@@ -487,7 +488,7 @@ public class DAO implements Idao
 			Connection conn = DriverManager.getConnection(adresse, login, mdp);
 			//4- préparer en envoyer la requete 
 			
-			String requete="UPDATE personne set idCompte=? "+
+			String requete="UPDATE compte set idCompte=? "+
 			"where Id=?";//requete SQL
 					
 			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
@@ -611,6 +612,276 @@ public class DAO implements Idao
 			e.printStackTrace();
 		}
 	return lc;
+	
+	}
+	@Override
+	public List<ConseillerClient> FindAllConseillers() {
+		// TODO Auto-generated method stub
+		List<ConseillerClient> conseillers = new ArrayList<ConseillerClient>();
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			String requete = "SELECT* FROM employer ";
+			
+			PreparedStatement ps = conn.prepareStatement(requete);
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			while (rs.next())
+			{
+			ConseillerClient c = new ConseillerClient();
+			c.setId(rs.getInt("Idemploye"));
+			c.setNom(rs.getString("nom"));
+			c.setPrenom(rs.getString("prenom"));
+			
+			conseillers.add(c);
+			}
+			
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return conseillers;
+	
+	}
+	@Override
+	public ConseillerClient getConseillerClient(int id) {
+		// TODO Auto-generated method stub
+		ConseillerClient  p = new ConseillerClient(); 
+				
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			
+			String requete="SELECT* FROM employer Where IdEmploye=?";
+					
+			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
+			ps.setInt(1, id);
+			
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			if(rs!=null) {
+			rs.next(); // permet de prendre la ligne 
+			p.setId(rs.getInt("IdConseiller")); 
+			p.setNom(rs.getString("nom"));
+			p.setPrenom(rs.getString("prenom"));
+						}
+			else
+				System.out.println("Aucun resultat");
+			//6- liberer les ressources
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	return p;
+		
+	}
+	@Override
+	public Gerant getGerant(int id) {
+		// TODO Auto-generated method stub
+		Gerant  p = new Gerant(); 
+		
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			
+			String requete="SELECT* FROM personne Where IdEmploye=?";
+					
+			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
+			ps.setInt(1, id);
+			
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			if(rs!=null) {
+			rs.next(); // permet de prendre la ligne 
+			p.setId(rs.getInt("IdConseiller")); 
+			p.setNom(rs.getString("nom"));
+			p.setPrenom(rs.getString("prenom"));
+						}
+			else
+				System.out.println("Aucun resultat");
+			//6- liberer les ressources
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	return p;
+		
+	}
+	@Override
+	public Auditeur getAuditeur(int id) {
+		// TODO Auto-generated method stub
+	Auditeur  a = new Auditeur(); 
+		
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			
+			String requete="SELECT* FROM personne Where IdEmploye=?";
+					
+			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
+			ps.setInt(1, id);
+			
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			if(rs!=null) {
+			rs.next(); // permet de prendre la ligne 
+			a.setId(rs.getInt("IdAuditeur")); 
+			a.setNom(rs.getString("nom"));
+			a.setPrenom(rs.getString("prenom"));
+						}
+			else
+				System.out.println("Aucun resultat");
+			//6- liberer les ressources
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	return a;
+		
+	}
+	@Override
+	public List<Gerant> FindAllGerant() {
+		// TODO Auto-generated method stub
+		List<Gerant> gerants = new ArrayList<Gerant>();
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			String requete = "SELECT* FROM employer ";
+			
+			PreparedStatement ps = conn.prepareStatement(requete);
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			while (rs.next())
+			{
+			Gerant g = new Gerant();
+			g.setId(rs.getInt("Idemploye"));
+			g.setNom(rs.getString("nom"));
+			g.setPrenom(rs.getString("prenom"));
+			
+			gerants.add(g);
+			}
+			
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return gerants;
+		
+	}
+	@Override
+	public List<Auditeur> FindAllAuditeur() {
+		// TODO Auto-generated method stub
+		List<Auditeur> auditeurs = new ArrayList<Auditeur>();
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/proxybanquesaraetdoria";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			String requete = "SELECT* FROM employer ";
+			
+			PreparedStatement ps = conn.prepareStatement(requete);
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			while (rs.next())
+			{
+			Auditeur a = new Auditeur();
+			a.setId(rs.getInt("Idemploye"));
+			a.setNom(rs.getString("nom"));
+			a.setPrenom(rs.getString("prenom"));
+			
+			auditeurs.add(a);
+			}
+			
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return auditeurs;
 	
 	}
 	
