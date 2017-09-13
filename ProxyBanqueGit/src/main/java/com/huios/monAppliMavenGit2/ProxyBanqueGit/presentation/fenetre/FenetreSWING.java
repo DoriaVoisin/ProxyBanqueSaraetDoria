@@ -23,6 +23,7 @@ import javax.swing.JTextField;
 
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Clients;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.ConseillerClient;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Particulier;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.IConseiller;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
@@ -158,7 +159,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 		private JLabel labelConsUVide5 = new JLabel("");                private JLabel labelConsUVide6 = new JLabel(""); 
 		private JLabel labelConsUVide7 = new JLabel("");                private JButton boutonConsU = new JButton("Valider");
 		
-		private IConseiller c = new ServiceConseiller();
+		private IConseiller sc = new ServiceConseiller();
 		
 		public FenetreSWING(){
 			
@@ -253,7 +254,10 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			panelConsC.setLayout(grilleConsC);
 			panelConsC.add(labelConsCNom); panelConsC.add(textConsCNom);
 			panelConsC.add(labelConsCPrenom); panelConsC.add(textConsCPrenom);
-		
+			panelConsC.add(labelConsCEmail); panelConsC.add(textConsCEmail);
+			panelConsC.add(labelConsCLogin); panelConsC.add(textConsCLogin);
+			panelConsC.add(labelConsCMDP); panelConsC.add(textConsCMDP);
+			panelConsC.add(labelConsCVide); panelConsC.add(boutonConsC);
 	
 			// Onglets
 			JTabbedPane onglets = new JTabbedPane();
@@ -265,7 +269,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			//onglets.addTab("Lecture compte épargne", panelCER);
 			onglets.addTab("Maj compte épargne    ", panelCEU);
 			onglets.addTab("Effacer compte épargne", panelCED);
-			onglets.addTab("Créer un conseiller", panelConsC);
+			onglets.addTab("Créer un conseiller   ", panelConsC);
 			getContentPane().add(onglets);
 			pack();
 			
@@ -279,7 +283,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					cc.setSolde(Integer.parseInt(textCCCSolde.getText()));
 					cc.setDecouvert(Integer.parseInt(textCCCDecouvert.getText()));
 					//cc.setOuvertureCompte(SystemClockFactory.getDatetime());
-					c.createCompteCourant(cc);
+					sc.createCompteCourant(cc);
 				}
 			});
 			// Action Valider Lecture Compte Courant
@@ -295,7 +299,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 				public void actionPerformed(ActionEvent e) {
 					int id = Integer.parseInt(textCCUId.getText());
 					int decouvert = Integer.parseInt(textCCUDecouvert.getText());
-					c.UpdateCompteCourant(id, decouvert);
+					sc.UpdateCompteCourant(id, decouvert);
 					textCCUId.setText("");
 					textCCUDecouvert.setText("");
 				}
@@ -306,15 +310,28 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					@Override
 					public void actionPerformed(ActionEvent e) {
 					int id = Integer.parseInt(textCCDId.getText());
-					c.DeleteCompteCourant(id);
+					sc.DeleteCompteCourant(id);
 					textCCDId.setText("");	
 					}
 				});
-//		}
-//		public static void main(String[]args) {
-//			FenetreSWING f =new FenetreSWING();
-//			f.setVisible(true);
-//		}
+			// Action Valider Creation Conseiller
+			boutonCCC.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					ConseillerClient c = new ConseillerClient();
+					c.setNom(textConsCNom.getText());
+					c.setPrenom(textConsCPrenom.getText());
+					c.setEmail(textConsCEmail.getText());
+					c.setMotdepasse(textConsCMDP.getText());
+					c.setLogin(textConsCLogin.getText());
+					sc.createConseillerClient(c);
+				}
+			});
+		}
+		public static void main(String[]args) {
+			FenetreSWING f =new FenetreSWING();
+			f.setVisible(true);
+		}
 				
 		
 		
@@ -368,5 +385,5 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 //					label2.setText(combo.getSelectedItem().toString());
 //				}
 //			});	
-		}
 	}
+	
