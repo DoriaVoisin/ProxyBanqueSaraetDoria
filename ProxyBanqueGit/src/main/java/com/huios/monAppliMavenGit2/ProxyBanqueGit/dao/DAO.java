@@ -213,13 +213,13 @@ public class DAO implements Idao
 			Connection conn = DriverManager.getConnection(adresse, login, mdp);
 			//4- préparer en envoyer la requete 
 			
-			String requete ="INSERT INTO employer (nom,prenom,login, motdepasse) VALUES (?,?,?,?)";
+			String requete ="INSERT INTO employe (nom,prenom,login, motdepasse, email) VALUES (?,?,?,?,?)";
 			PreparedStatement ps= conn.prepareStatement(requete);
 			ps.setString(1,cl.getNom());
 			ps.setString(2,cl.getPrenom());
 			ps.setString(3, cl.getLogin());
 			ps.setString(4, cl.getMotdepasse());
-						
+			ps.setString(5, cl.getEmail());	
 			ps.executeUpdate();
 			
 			ps.close();
