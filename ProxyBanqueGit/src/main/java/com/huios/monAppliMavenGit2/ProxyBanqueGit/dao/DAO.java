@@ -299,8 +299,7 @@ public class DAO implements Idao
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		
-			}
-		
+			}		
 		
 	}
 	@Override
