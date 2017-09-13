@@ -12,6 +12,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteEpargne;
 import java.sql.SQLException;
 
+
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Auditeur;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CarteVisaElectron;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CarteVisaPremier;
@@ -895,4 +896,189 @@ public class DAO implements Idao
 	return mesCartes;
 	}
 	
+	@Override
+	public CompteCourant getCompteCourant(int idCompteCourant) {
+		// TODO Auto-generated method stub
+		
+		CompteCourant cc = new CompteCourant(); 
+		
+			
+			try {
+				//1- charger le pilote
+				Class.forName("com.mysql.jdbc.Driver");
+				//2- adresse de la base de données
+				String adresse="jdbc:mysql://localhost:3306/personnebdd";
+				String login="root";
+				String mdp="";
+				
+				//3- connecter à la base 
+				Connection conn = DriverManager.getConnection(adresse, login, mdp);
+				//4- préparer en envoyer la requete 
+				
+				String requete="SELECT* FROM compte Where idCompte=?";
+						
+				PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
+				ps.setInt(1, idCompteCourant);
+				
+				//5- récuperer le resultat
+				ResultSet rs = ps.executeQuery();
+				if(rs!=null) {
+				rs.next(); // permet de prendre la ligne 
+				cc.setNumeroCompte(rs.getInt("idCompte")); 
+				cc.setSolde(rs.getFloat("solde"));
+				}
+				else
+					System.out.println("Aucun resultat");
+				//6- liberer les ressources
+				ps.close();
+				conn.close();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
+		return cc;
+	}
+
+	@Override
+	public CompteEpargne getCompteEpargne(int idCompteEpargne) {
+		// TODO Auto-generated method stub
+		
+		CompteEpargne ce = new CompteEpargne(); 
+		
+			
+			try {
+				//1- charger le pilote
+				Class.forName("com.mysql.jdbc.Driver");
+				//2- adresse de la base de données
+				String adresse="jdbc:mysql://localhost:3306/personnebdd";
+				String login="root";
+				String mdp="";
+				
+				//3- connecter à la base 
+				Connection conn = DriverManager.getConnection(adresse, login, mdp);
+				//4- préparer en envoyer la requete 
+				
+				String requete="SELECT* FROM compte Where idCompte=?";
+						
+				PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
+				ps.setInt(1, idCompteEpargne);
+				
+				//5- récuperer le resultat
+				ResultSet rs = ps.executeQuery();
+				if(rs!=null) {
+				rs.next(); // permet de prendre la ligne 
+				ce.setNumeroCompte(rs.getInt("idCompte")); 
+				ce.setSolde(rs.getFloat("solde"));
+				}
+				else
+					System.out.println("Aucun resultat");
+				//6- liberer les ressources
+				ps.close();
+				conn.close();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
+		return ce;
+	}
+	@Override
+	public CarteVisaElectron getCarteVisaElectron(int idCarteVisaElectron) {
+		CarteVisaElectron cve = new CarteVisaElectron(); 
+		
+		
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/personnebdd";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			
+			String requete="SELECT* FROM carte Where idCarte=?";
+					
+			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
+			ps.setInt(1, idCarteVisaElectron);
+			
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			if(rs!=null) {
+			rs.next(); // permet de prendre la ligne 
+			cve.setNumCarte(rs.getInt("idCarte")); 
+			cve.setNomTitulaire(rs.getString("nomTitulaire"));
+			}
+			else
+				System.out.println("Aucun resultat");
+			//6- liberer les ressources
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	return cve;
+	}
+	@Override
+	public CarteVisaPremier getCarteVisaPremier(int idCarteVisaPremier) {
+CarteVisaPremier cvp = new CarteVisaPremier(); 
+		
+		
+		try {
+			//1- charger le pilote
+			Class.forName("com.mysql.jdbc.Driver");
+			//2- adresse de la base de données
+			String adresse="jdbc:mysql://localhost:3306/personnebdd";
+			String login="root";
+			String mdp="";
+			
+			//3- connecter à la base 
+			Connection conn = DriverManager.getConnection(adresse, login, mdp);
+			//4- préparer en envoyer la requete 
+			
+			String requete="SELECT* FROM carte Where idCarte=?";
+					
+			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
+			ps.setInt(1, idCarteVisaPremier);
+			
+			//5- récuperer le resultat
+			ResultSet rs = ps.executeQuery();
+			if(rs!=null) {
+			rs.next(); // permet de prendre la ligne 
+			cvp.setNumCarte(rs.getInt("idCarte")); 
+			cvp.setNomTitulaire(rs.getString("nomTitulaire"));
+			}
+			else
+				System.out.println("Aucun resultat");
+			//6- liberer les ressources
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	return cvp;
+	}
 }

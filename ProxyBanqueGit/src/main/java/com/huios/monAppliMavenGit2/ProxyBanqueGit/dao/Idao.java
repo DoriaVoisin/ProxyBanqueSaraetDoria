@@ -24,12 +24,13 @@ public interface Idao
 	public void createCompteCourant(CompteCourant cc);
 	public void UpdateCompteCourant(int idCompte, float decouvert); 
 	public void DeleteCompteCourant(int idCompte);
-
+	public CompteCourant getCompteCourant(int idCompteCourant);
 
 	//CRUD Compte Epargne
 	public void createCompteEpargne(CompteEpargne ce);
 	public void UpdateCompteEpargne(int idCompte, float tauxRemuneration); 
 	public void DeleteCompteEpargne(int idCompte);
+	public CompteEpargne getCompteEpargne(int idCompteEpargne);
 	
 	//Les Comptes
 	public List<Comptes> FindAllComptes(String rechercher); 
@@ -53,11 +54,13 @@ public interface Idao
 	public void createCarteVisaElectron(CarteVisaElectron cve);
 	public void UpdateCarteVisaElectron(int idCarte, String nomtitulaire); 
 	public void DeleteCarteVisaElectron(int idCarte);
+	public CarteVisaElectron getCarteVisaElectron(int idCarteVisaElectron);
 	
 	// CRUD CartesvisaPremier
 	public void createCarteVisaPremier(CarteVisaPremier cvp);
 	public void UpdateCarteVisaPremier(int idCarte, String nomtitulaire); 
 	public void DeleteCarteVisaPremier(int idCarte);
+	public CarteVisaPremier getCarteVisaPremier(int idCarteVisaPremier);
 	
 	//Les Cartes
 	public List<Cartes> FindAllCartes(String rechercher); 
