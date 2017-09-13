@@ -2,6 +2,7 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.metier;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * La classe g�rant h�rite de la classe Employer. Elle est en association avec la classe ConseillerClient.
  * Un g�rant est r�sponsable de plusieurs conseillersclient
@@ -9,8 +10,21 @@ import java.util.List;
  *
  */
 public class Gerant extends Employe
+
+		
 {
+	
+	public Gerant(String nom, String prenom) {
+		super(nom, prenom);
+		// TODO Auto-generated constructor stub
+	}
+	public Gerant() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private List<ConseillerClient> conseillerclients = new ArrayList<ConseillerClient> ();
+	
 
 	public List<ConseillerClient> getConseillerclients() 
 	{
@@ -21,7 +35,7 @@ public class Gerant extends Employe
 	{
 		this.conseillerclients = conseillerclients;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Gerant [conseillerclients=" + conseillerclients + "]";

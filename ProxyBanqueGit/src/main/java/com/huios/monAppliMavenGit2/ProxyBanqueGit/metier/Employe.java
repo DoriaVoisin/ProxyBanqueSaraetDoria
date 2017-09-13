@@ -17,6 +17,15 @@ private String motdepasse;
 private Agence monAgence;
 
 
+
+public Employe() {
+	super();
+}
+public Employe(String nom, String prenom) {
+	super();
+	this.nom = nom;
+	this.prenom = prenom;
+}
 public int getId() 
 {
 	return id;

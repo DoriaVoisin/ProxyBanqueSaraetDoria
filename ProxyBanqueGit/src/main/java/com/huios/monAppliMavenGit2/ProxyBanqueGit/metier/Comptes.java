@@ -17,6 +17,7 @@ private float solde;
 private Date ouvertureCompte;
 private Clients compteClient;
 private Cartes compteCarte;
+
 public int getNumeroCompte() {
 	return numeroCompte;
 }

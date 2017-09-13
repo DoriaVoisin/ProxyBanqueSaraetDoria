@@ -1,5 +1,28 @@
 package com.huios.monAppliMavenGit2.ProxyBanqueGit.service;
 
-public class ServiceAuditeur {
+import java.util.List;
+
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Auditeur;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Comptes;
+
+public class ServiceAuditeur implements IAuditeur {
+
+	@Override
+	public boolean analyseComptes(Comptes c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void createAuditeur(Auditeur a) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Auditeur> FindAllAuditeur() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

@@ -2,9 +2,11 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.service;
 
 import java.util.List;
 
+
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteEpargne;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Comptes;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.ConseillerClient;
 
 public interface IConseiller 
 {
@@ -20,7 +22,12 @@ public interface IConseiller
 		public void DeleteCompteEpargne(int idCompte);
 			
 		//Les Comptes
-		public List<Comptes> FindAllComptes(String rechercher); 
-
-
+		public List<Comptes> FindAllComptes(String rechercher);		
+		public ConseillerClient getConseillerClient(int id);
+		
+		
+		public void suppressionConseillerClient (int id);
+		public void miseAjourConseillerClient (int id, String prenom);
+		public void createConseillerClient (ConseillerClient cl);
+		public List<ConseillerClient> FindAllConseillers();
 }
