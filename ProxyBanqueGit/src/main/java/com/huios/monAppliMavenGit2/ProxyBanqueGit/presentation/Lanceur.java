@@ -3,6 +3,7 @@ package com.huios.monAppliMavenGit2.ProxyBanqueGit.presentation;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Auditeur;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.ConseillerClient;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Gerant;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.presentation.fenetre.FenetreSWING;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.IAuditeur;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.IConseiller;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.IGerant;
@@ -18,11 +19,14 @@ public class Lanceur {
 		IGerant ig = new ServiceGerant();
 		IAuditeur ia = new ServiceAuditeur();	
 		
+		FenetreSWING f =new FenetreSWING();
+		f.setVisible(true);
+		
 		ConseillerClient cl1 = new ConseillerClient ("Melissa","Perrot","wtf","mel","mel@dibiza.com");
 		ConseillerClient cl2 = new ConseillerClient ("Sara","Vallerotto","slg","sara","sara@ibis.com");	
 		
-		ic.createConseillerClient(cl1);
-		ic.createConseillerClient(cl2);
+//		ic.createConseillerClient(cl1);
+//		ic.createConseillerClient(cl2);
 		
 		Gerant g1 = new Gerant ("Mario","Rossi");
 		Gerant g2 = new Gerant ("Giulia","Girardi");
