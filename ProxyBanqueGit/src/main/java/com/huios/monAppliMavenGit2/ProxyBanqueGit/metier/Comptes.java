@@ -14,9 +14,24 @@ public abstract class Comptes
 {
 private int numeroCompte;
 private float solde;
-private Date ouvertureCompte;
+private String ouvertureCompte;
 private Clients compteClient;
 private Cartes compteCarte;
+
+
+
+public Comptes() {
+	super();
+}
+
+
+public Comptes(int numeroCompte, float solde, String ouvertureCompte) {
+	super();
+	this.numeroCompte = numeroCompte;
+	this.solde = solde;
+	this.ouvertureCompte = ouvertureCompte;
+}
+
 
 public int getNumeroCompte() {
 	return numeroCompte;
@@ -30,10 +45,10 @@ public float getSolde() {
 public void setSolde(float solde) {
 	this.solde = solde;
 }
-public Date getOuvertureCompte() {
+public String getOuvertureCompte() {
 	return ouvertureCompte;
 }
-public void setOuvertureCompte(Date ouvertureCompte) {
+public void setOuvertureCompte(String ouvertureCompte) {
 	this.ouvertureCompte = ouvertureCompte;
 }
 public Clients getCompteClient() {
