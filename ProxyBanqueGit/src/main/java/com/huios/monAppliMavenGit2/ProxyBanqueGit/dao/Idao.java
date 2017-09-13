@@ -52,11 +52,11 @@ public interface Idao
 	public void createAuditeur  (Auditeur  a);
 	public List<Auditeur> FindAllAuditeur();
 	
-<<<<<<< HEAD
+
 	public ConseillerClient getConseillerClient(int id);
 	public Gerant getGerant(int id);
 	public Auditeur getAuditeur(int id);	
-=======
+
 	// CRUD CartesvisaElectron
 	public void createCarteVisaElectron(CarteVisaElectron cve);
 	public void UpdateCarteVisaElectron(int idCarte, String nomtitulaire); 
@@ -71,14 +71,11 @@ public interface Idao
 	
 	//Les Cartes
 	public List<Cartes> FindAllCartes(String rechercher); 
->>>>>>> branch 'master' of https://github.com/DoriaVoisin/ProxyBanqueSaraetDoria.git
+
 
 		
-<<<<<<< HEAD
-	//Les Comptes
-	public List<Comptes> FindAllComptes(String rechercher);
-	
-=======
->>>>>>> branch 'master' of https://github.com/DoriaVoisin/ProxyBanqueSaraetDoria.git
+
+
+
 	
 }

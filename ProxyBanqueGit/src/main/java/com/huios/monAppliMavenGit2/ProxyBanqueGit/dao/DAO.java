@@ -387,12 +387,11 @@ public class DAO implements Idao
 			Connection conn = DriverManager.getConnection(adresse, login, mdp);
 			//4- préparer en envoyer la requete 
 			
-<<<<<<< HEAD
+
 			String requete="UPDATE compte set idCompte=? "+
-=======
-			String requete="UPDATE compte                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             set idCompte=? "+
->>>>>>> branch 'master' of https://github.com/DoriaVoisin/ProxyBanqueSaraetDoria.git
-			"where Id=?";//requete SQL
+			"where Id=?";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+			//requete SQL
 					
 			PreparedStatement ps= conn.prepareStatement(requete); //prépare la requete
 			ps.setFloat(1,decouvert); 
