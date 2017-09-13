@@ -65,7 +65,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 		private JButton boutonRClListe = new JButton("Afficher la liste");
 		private JLabel labelUClId = new JLabel("Id");
 		private JLabel labelUClNom = new JLabel("Nouveau nom");
-		private JLabel labelUClPrenom = new JLabel("Nouveau pr�nom");
+		private JLabel labelUClPrenom = new JLabel("Nouveau prenom");
 		private JLabel labelUClAdresse = new JLabel("Nouvelle adresse");
 		private JTextField textUClId=new JTextField(10);
 		private JTextField textUClNom=new JTextField(10);
@@ -315,7 +315,7 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					}
 				});
 			// Action Valider Creation Conseiller
-			boutonCCC.addActionListener(new ActionListener() {
+			boutonConsC.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					ConseillerClient c = new ConseillerClient();
@@ -325,6 +325,11 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					c.setMotdepasse(textConsCMDP.getText());
 					c.setLogin(textConsCLogin.getText());
 					sc.createConseillerClient(c);
+					textConsCNom.setText("");
+					textConsCPrenom.setText("");
+					textConsCEmail.setText("");
+					textConsCMDP.setText("");
+					textConsCLogin.setText("");
 				}
 			});
 		}
