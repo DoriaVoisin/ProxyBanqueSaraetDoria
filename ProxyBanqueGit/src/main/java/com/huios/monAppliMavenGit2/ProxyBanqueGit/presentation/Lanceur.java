@@ -1,6 +1,7 @@
 package com.huios.monAppliMavenGit2.ProxyBanqueGit.presentation;
 
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Auditeur;
+import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.CompteCourant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.ConseillerClient;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.metier.Gerant;
 import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.IAuditeur;
@@ -17,13 +18,14 @@ public class Lanceur {
 		IConseiller ic = new ServiceConseiller();
 		IGerant ig = new ServiceGerant();
 		IAuditeur ia = new ServiceAuditeur();	
+	
 		
 		ConseillerClient cl1 = new ConseillerClient ("Melissa","Perrot","wtf","mel","mel@dibiza.com");
 		ConseillerClient cl2 = new ConseillerClient ("Sara","Vallerotto","slg","sara","sara@ibis.com");	
-		
+		CompteCourant cc = new CompteCourant(1200, 200, "09.02.2017" );
 		ic.createConseillerClient(cl1);
 		ic.createConseillerClient(cl2);
-		
+		ic.createCompteCourant(cc);
 		Gerant g1 = new Gerant ("Mario","Rossi");
 		Gerant g2 = new Gerant ("Giulia","Girardi");
 		
