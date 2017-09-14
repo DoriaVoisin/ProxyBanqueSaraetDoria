@@ -265,6 +265,14 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			panelConsC.add(labelConsCLogin); panelConsC.add(textConsCLogin);
 			panelConsC.add(labelConsCMDP); panelConsC.add(textConsCMDP);
 			panelConsC.add(labelConsCVide); panelConsC.add(boutonConsC);
+			//Affichage Read Conseiller
+			panelConsR.setLayout(grilleConsR);
+			panelConsR.add(labelConsRId); panelConsR.add(textCERId);
+			panelConsR.add(labelCERInfo); panelConsR.add(labelCERVide); 
+			panelConsR.add(labelCERVide2); panelConsR.add(labelCERVide3);
+			panelConsR.add(labelCERVide4); panelConsR.add(labelCERVide5); 
+			panelConsR.add(labelCERVide6); panelConsR.add(labelCERVide7); 
+			panelConsR.add(labelCERVide8); panelConsR.add(boutonCER);
 			//Affichage maj Conseiller
 			panelConsU.setLayout(grilleConsD);
 			panelConsU.add(labelConsUId); panelConsU.add(textConsUId);
@@ -285,15 +293,15 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 			// Onglets
 			JTabbedPane onglets = new JTabbedPane();
 			onglets.addTab("Créer compte courant  ", panelCCC);
-			//onglets.addTab("Lecture compte courant", panelCCR);
+			onglets.addTab("Lecture compte courant", panelCCR);
 			onglets.addTab("Maj compte courant    ", panelCCU);
 			onglets.addTab("Effacer compte courant", panelCCD);
 			onglets.addTab("Créer compte epargne  ", panelCEC);
-			//onglets.addTab("Lecture compte épargne", panelCER);
+			onglets.addTab("Lecture compte épargne", panelCER);
 			onglets.addTab("Maj compte épargne    ", panelCEU);
 			onglets.addTab("Effacer compte épargne", panelCED);
 			onglets.addTab("Créer un conseiller   ", panelConsC);
-//			onglets.addTab("Lire un conseiller    ", panelConsR);
+			onglets.addTab("Lire un conseiller    ", panelConsR);
 			onglets.addTab("MAJ conseiller        ", panelConsU);
 			onglets.addTab("Effacer conseiller    ", panelConsD);
 			getContentPane().add(onglets);
@@ -358,7 +366,24 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					textConsCLogin.setText("");
 				}
 			});
-			
+			//Action Valider Lecture Conseiller
+			boutonConsRValider.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				}
+			});
+			// Action Valider MAJ Conseiller
+			boutonConsU.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					int id = Integer.parseInt(textConsUId.getText());
+					String prenom = textConsUPrenom.getText();
+					sc.miseAjourConseillerClient(id, prenom);
+					textConsUId.setText("");
+					textConsUPrenom.setText("");
+				}
+			});
 			// Action Valider Effacement Conseiller
 			boutonConsD.addActionListener(new ActionListener() {
 					
@@ -369,22 +394,12 @@ import com.huios.monAppliMavenGit2.ProxyBanqueGit.service.ServiceConseiller;
 					textConsDId.setText("");
 					}
 				});
-			// Action Valider MAJ Conseiller
-				boutonConsU.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						int id = Integer.parseInt(textConsUId.getText());
-						int prenom = Integer.parseInt(textConsUPrenom.getText());
-						sc.UpdateCompteCourant(id, prenom);
-						textConsUId.setText("");
-						textConsUPrenom.setText("");
-					}
-				});
 		}
-		public static void main(String[]args) {
-			FenetreSWING f =new FenetreSWING();
-			f.setVisible(true);
-		}
+		
+//		public static void main(String[]args) {
+//			FenetreSWING f =new FenetreSWING();
+//			f.setVisible(true);
+//		}
 				
 		
 		
