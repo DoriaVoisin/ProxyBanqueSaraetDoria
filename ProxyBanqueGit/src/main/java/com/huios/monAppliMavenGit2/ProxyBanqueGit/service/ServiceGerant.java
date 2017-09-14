@@ -90,12 +90,6 @@ public class ServiceGerant implements IGerant
 	}
 
 	@Override
-	public List<Auditeur> FindAllAuditeur() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void mettreAjourGerant(int id, String prenom) {
 		// TODO Auto-generated method stub
 		

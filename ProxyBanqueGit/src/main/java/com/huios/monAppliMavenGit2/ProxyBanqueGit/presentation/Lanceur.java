@@ -26,14 +26,14 @@ public class Lanceur {
 		ConseillerClient cl1 = new ConseillerClient ("Melissa","Perrot","wtf","mel","mel@dibiza.com");
 		ConseillerClient cl2 = new ConseillerClient ("Sara","Vallerotto","slg","sara","sara@ibis.com");	
 
-<<<<<<< HEAD
+
 		
 		ic.createConseillerClient(cl1);
 		ic.createConseillerClient(cl2);
 		
 
 		
-=======
+
 //		ic.createConseillerClient(cl1);
 //		ic.createConseillerClient(cl2);
 		
@@ -42,7 +42,7 @@ public class Lanceur {
 		ic.createConseillerClient(cl2);
 		ic.createCompteCourant(cc);
 
->>>>>>> 8894e9149571d05192034985d4e51d2b9f9dfd3d
+
 		Gerant g1 = new Gerant ("Mario","Rossi");
 		Gerant g2 = new Gerant ("Giulia","Girardi");
 		
@@ -83,7 +83,7 @@ public class Lanceur {
 						
 			System.out.println(ic.FindAllConseillers());
 			System.out.println(ig.FindAllGerant());
-			System.out.println(ig.FindAllAuditeur());
+			System.out.println(ia.FindAllAuditeur());
 			
 		}
 		 catch (Exception e) {
@@ -92,7 +92,7 @@ public class Lanceur {
 		 }
 
 
-		CompteCourant cc = new CompteCourant(1200, 200, "09.02.2017" );
+		//CompteCourant cc = new CompteCourant(1200, 200, "09.02.2017" );
 		ic.createConseillerClient(cl1);
 		ic.createConseillerClient(cl2);
 		ic.createCompteCourant(cc);

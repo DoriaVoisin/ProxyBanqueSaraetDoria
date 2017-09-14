@@ -29,7 +29,7 @@ public interface IGerant
 		public void mettreAjourConseillerClient(int id, String prenom); 
 		public void supprimerConseillerClient(int id);
 		
-		public List<Auditeur> FindAllAuditeur();
+		
 		
 		public List<Gerant> FindAllGerant();
 		public void createGerant(Gerant g);
